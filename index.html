@@ -41,6 +41,11 @@
 
   <!--gsap 연결-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js" integrity="sha512-kVlGhj2qFy+KBCFuvjBJTGUMxbdqJKs4yK2jh0e0VPhWUPiPC87bzm4THmaaIee3Oj7j6sDpTTgm2EPPiESqBg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!--SWIPER-->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
   <!--JS 연결-->
   <script defer src="./js/main.js"></script>
   <title>Starbucks Coffee Korea</title>
@@ -419,8 +424,51 @@
       <div class="fade-in">
         <img src="./images/visual_spoon.png" alt="Spon" class="spoon" >
       </div>
+    </div>
+  </section>
 
+  <section class="notice">
+    <div class="notice-line">
+      <div class="bg-left"></div>
+      <div class="bg-right"></div>
+      <div class="inner">
 
+        <div class="inner__left">
+          <h2>공지사항</h2>
+          <!-- Slider main container -->
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">크리스마스 & 연말연시 스타벅스 매장 엽업 시간 변경 안내</a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">[당첨자 발표] 2022 스타벅스 플래너 영수증 이벤트</a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">스타벅스 커피 코리아 애플리케이션 버전 업데이트 안내</a>
+              </div>
+
+              <div class="swiper-slide">
+                <a href="javascript:void(0)">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+              </div>
+
+            </div>
+          </div>
+          <a href="javascript:void(0)" class="notice-line__more">
+            <div class="material-icons">add_circle</div>
+          </a>
+        </div>
+        <div class="inner__right">
+          <h2>스타벅스 프로모션</h2>
+          <div class="toggle-promotion">
+            <div class="material-icons">arrow_upward</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </body>
