@@ -292,6 +292,7 @@ header .badges .badge {
 
 .visual .inner {
   height: 646px;
+  z-index: 1;
 }
 
 /*inner 생략 가능*/
@@ -364,7 +365,6 @@ header .badges .badge {
 }
 .notice .notice-line .inner {
   height: 62px;
-  z-index: 1;
   display: flex;
 }
 .notice .notice-line .inner__left {
@@ -383,6 +383,7 @@ header .badges .badge {
 .notice .notice-line .inner__left .swiper-container {
   height: 62px;
   flex-grow: 1;
+  
 }
 .notice .notice-line .inner__left .swiper-slide {
   height: 62px;
@@ -391,6 +392,7 @@ header .badges .badge {
 }
 .notice .notice-line .inner__left .swiper-slide a {
   color: #fff;
+
 }
 .notice .notice-line .inner__left .notice-line__more {
   width: 62px;
@@ -444,4 +446,3 @@ header .badges .badge {
   left: 50%;
   margin-left: calc((819px * 3 + 20px) / -2); /*정중앙 배치*/
 }
-
