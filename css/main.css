@@ -438,7 +438,7 @@ header .badges .badge {
   width: calc(819px * 3 + 20px);
   /*width: calc(100% - 50px);*/
   height: 553px;
-  background-color: orange;
+  background-color: green;
   text-align: center;
   font-size: 200px;
   position: absolute;
