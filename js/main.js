@@ -1,19 +1,23 @@
-const searchEL = document.querySelector('.search');
-const searchInputEl = searchEL.querySelector('input'); //HTML 에서 처음부터 찾지말고 담아놓은 변수에서 부터 찾기
-
-searchEL.addEventListener('click', function() {
-  searchInputEl.focus(); //focus 강제적용
-});
-
-searchInputEl.addEventListener('focus', function(){
-  searchEL.classList.add('focused');
-  searchInputEl.setAttribute('placeholder', '통합검색'); //HTML 속성 지정할때 사용
-});
-
-searchInputEl.addEventListener('blur', function(){ //focus 가 해지될때
-  searchEL.classList.remove('focused');
-  searchInputEl.setAttribute('placeholder', ''); 
-});
+/**
+ * 검색창 제어
+ */
+// 검색창 요소(.search) 찾기.
+const searchEl = document.querySelector('.search')
+const searchInputEl = searchEl.querySelector('input')
+// 검색창 요소를 클릭하면 실행.
+searchEl.addEventListener('click', function () {
+  searchInputEl.focus()
+})
+// 검색창 요소 내부 실제 input 요소에 포커스되면 실행.
+searchInputEl.addEventListener('focus', function () {
+  searchEl.classList.add('focused')
+  searchInputEl.setAttribute('placeholder', '통합검색')
+})
+// 검색창 요소 내부 실제 input 요소에서 포커스가 해제(블러)되면 실행.
+searchInputEl.addEventListener('blur', function () {
+  searchEl.classList.remove('focused')
+  searchInputEl.setAttribute('placeholder', '')
+})
 
 const badgeEl = document.querySelector('header .badges');
 
@@ -35,24 +39,44 @@ window.addEventListener('scroll', _.throttle(function (){
   }
 },300));
 
-// _.throttle(함수, 시간)
-
-//fade-in 설정
-const fadeEls = document.querySelectorAll('.visual .fade-in');
+/**
+ * 순서대로 나타나는 기능
+ */
+// 나타날 요소들(.fade-in) 찾기.
+const fadeEls = document.querySelectorAll('.visual .fade-in')
+// 나타날 요소들을 하나씩 반복해서 처리!
 fadeEls.forEach(function (fadeEl, index) {
-  //gsap.to(요소, 지속시간, 옵션);
+  // 각 요소들을 순서대로(delay) 보여지게 함!
   gsap.to(fadeEl, 1, {
-    delay: (index + 1 ) * .7, //하나씩 나오게 index 설정 (0.7, 1.4...이렇게 나타난다)
+    delay: (index + 1) * .7,
     opacity: 1
-  });
-});
+  })
+})
 
 /**
  * 슬라이드 요소 관리
  */
-//(tjsxorwk, dhqtus)
  new Swiper('.notice-line .swiper-container', {
   direction: 'vertical', // 수직 슬라이드
   autoplay: true, // 자동 재생 여부
   loop: true // 반복 재생 여부
-}) //생성자
+})
+new Swiper('.promotion .swiper-container', {
+  // direction: 'horizontal', // 수평 슬라이드
+  autoplay: { // 자동 재생 여부
+    delay: 5000 // 5초마다 슬라이드 바뀜
+  },
+  loop: true, // 반복 재생 여부
+  slidesPerView: 3, // 한 번에 보여줄 슬라이드 개수
+  spaceBetween: 10, // 슬라이드 사이 여백
+  centeredSlides: true, // 1번 슬라이드가 가운데 보이기
+  pagination: { // 페이지 번호 사용 여부
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    clickable: true // 사용자의 페이지 번호 요소 제어 가능 여부
+  },
+  navigation: { // 슬라이드 이전/다음 버튼 사용 여부
+    prevEl: '.promotion .swiper-prev', // 이전 버튼 선택자
+    nextEl: '.promotion .swiper-next' // 다음 버튼 선택자
+  }
+})
+
